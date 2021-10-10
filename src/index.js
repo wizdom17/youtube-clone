@@ -2,12 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {Provider} from "react-redux"
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./_base.scss"
+import store from './store';
+import {BrowserRouter as Router} from "react-router-dom"
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+  
+      <Router>
+            <App />
+      </Router>
+
+    
+  </Provider>,
   document.getElementById('root')
 );
 
